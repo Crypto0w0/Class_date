@@ -16,6 +16,7 @@ public:
     bool operator<(date d);
     bool operator>=(date d);
     bool operator<=(date d);
+    int operator[](int i); //ДЗ
     
     date& operator++(){
         day += 1;
@@ -147,6 +148,14 @@ bool date::operator<=(date d){
     if (day <= d.day && month <= d.month && year <= d.year) return true;
     else return false;
 }
+
+int date::operator[](int i) //ДЗ
+    {
+        if (i == 0) return this->day;
+        else if (i == 1) return this->month;
+        else if (i== 2) return this->year;
+        else return -1;
+    }
 
 
 int main() {
